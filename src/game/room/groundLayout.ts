@@ -1,7 +1,7 @@
 export const TILE_SIZE = 16;
 export const ROOM_WIDTH_TILES = 20;
 export const ROOM_HEIGHT_TILES = 12;
-export const GROUND_TILE_INDEX = 0;
+export const GROUND_TILE_INDEX = 36;
 
 export type GroundPlacement = {
   x: number;

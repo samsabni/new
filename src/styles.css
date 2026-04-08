@@ -1,7 +1,7 @@
 :root {
   color-scheme: dark;
   font-family: "Avenir Next", "Segoe UI", sans-serif;
-  background: #0d1520;
+  background: #0b1118;
   color: #eef4f8;
 }
 
@@ -18,9 +18,11 @@ body,
 }
 
 body {
+  display: grid;
+  place-items: center;
   background:
-    radial-gradient(circle at top, rgba(120, 189, 255, 0.14), transparent 28%),
-    linear-gradient(180deg, #121c2b 0%, #0b1119 100%);
+    radial-gradient(circle at top, rgba(114, 180, 255, 0.14), transparent 28%),
+    linear-gradient(180deg, #141f2d 0%, #091018 100%);
 }
 
 #app {
@@ -28,9 +30,9 @@ body {
   place-items: center;
 }
 
-.boot-message {
-  padding: 18px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
+canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
 }

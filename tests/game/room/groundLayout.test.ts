@@ -12,10 +12,11 @@ import {
 describe("createGroundPlacements", () => {
   it("fills the room with one ground tile index", () => {
     const placements = createGroundPlacements();
+    const lastPlacement = placements[placements.length - 1];
 
     expect(placements).toHaveLength(ROOM_WIDTH_TILES * ROOM_HEIGHT_TILES);
     expect(placements[0]).toEqual({ x: 0, y: 0, index: GROUND_TILE_INDEX });
-    expect(placements.at(-1)).toEqual({
+    expect(lastPlacement).toEqual({
       x: ROOM_WIDTH_TILES - 1,
       y: ROOM_HEIGHT_TILES - 1,
       index: GROUND_TILE_INDEX

@@ -4,3 +4,5 @@ export const TILESET_FRAME_SIZE = 16;
 
 export const PLAYER_TEXTURE_KEY = "metrocity-player";
 export const PLAYER_TEXTURE_PATH = "/assets/metrocity/player.png";
+export const PLAYER_FRAME_SIZE = 16;
+export const PLAYER_START_FRAME = 6;
