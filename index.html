@@ -3,10 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tiny Top-Down Game</title>
+    <title>Terminal Shell</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <input
+      id="dev-panel-toggle"
+      class="dev-panel-toggle"
+      type="checkbox"
+      aria-label="Open developer panel"
+    />
+    <label
+      for="dev-panel-toggle"
+      class="dev-panel-handle"
+      aria-controls="dev-panel"
+    >
+      [dev]
+    </label>
+    <aside id="dev-panel" class="dev-panel" aria-label="Developer panel"></aside>
+    <main class="terminal-shell" aria-label="Three panel terminal shell">
+      <section class="panel panel-left" aria-label="Left panel"></section>
+      <section class="panel panel-center" aria-label="Center panel"></section>
+      <section class="panel panel-right" aria-label="Right panel"></section>
+    </main>
   </body>
 </html>

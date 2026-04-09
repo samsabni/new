@@ -1,0 +1,115 @@
+:root {
+  --color-background: #050505;
+  --color-panel: #060606;
+  --color-border: #202020;
+  --color-text: #e8e8e8;
+  --color-text-muted: #8a8a8a;
+  --dev-panel-width: min(24rem, 28vw);
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco,
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--color-background);
+}
+
+body {
+  overflow-x: auto;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+}
+
+.dev-panel-toggle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dev-panel-handle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  user-select: none;
+  transition: right 140ms ease, color 140ms ease, border-color 140ms ease;
+}
+
+.dev-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  width: var(--dev-panel-width);
+  height: 100svh;
+  background: var(--color-panel);
+  border-left: 1px solid var(--color-border);
+  transform: translateX(100%);
+  transition: transform 140ms ease;
+}
+
+#dev-panel-toggle:checked + .dev-panel-handle {
+  right: calc(var(--dev-panel-width) + 16px);
+  color: var(--color-text);
+}
+
+#dev-panel-toggle:checked + .dev-panel-handle + .dev-panel {
+  transform: translateX(0);
+}
+
+#dev-panel-toggle:focus-visible + .dev-panel-handle,
+.dev-panel-handle:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+.terminal-shell {
+  display: grid;
+  grid-template-columns: 22fr 56fr 22fr;
+  width: 100%;
+  min-width: 960px;
+  height: 100svh;
+  background: var(--color-background);
+}
+
+.panel {
+  min-height: 100svh;
+  background: var(--color-background);
+}
+
+.panel + .panel {
+  border-left: 1px solid var(--color-border);
+}
+
+.panel-left,
+.panel-right {
+  background: var(--color-panel);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dev-panel,
+  .dev-panel-handle {
+    transition: none;
+  }
+}
