@@ -20,11 +20,295 @@
     >
       [dev]
     </label>
-    <aside id="dev-panel" class="dev-panel" aria-label="Developer panel"></aside>
+    <aside id="dev-panel" class="dev-panel" aria-label="Developer panel">
+      <div class="dev-panel-body">
+        <label class="identity-field" for="player-personality-select">
+          <span class="identity-field-label">Personality</span>
+          <select
+            id="player-personality-select"
+            class="identity-select"
+            aria-label="Player personality"
+          ></select>
+        </label>
+        <label class="identity-field" for="theme-mode-select">
+          <span class="identity-field-label">Theme</span>
+          <select
+            id="theme-mode-select"
+            class="identity-select"
+            aria-label="Theme mode"
+          >
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+          </select>
+        </label>
+      </div>
+    </aside>
     <main class="terminal-shell" aria-label="Three panel terminal shell">
-      <section class="panel panel-left" aria-label="Left panel"></section>
-      <section class="panel panel-center" aria-label="Center panel"></section>
-      <section class="panel panel-right" aria-label="Right panel"></section>
+      <section class="panel panel-left" aria-label="Left panel">
+        <span class="panel-label" aria-hidden="true">1</span>
+        <div class="left-panel-identity">
+          <div
+            class="portrait-frame"
+            aria-label="Portrait placeholder"
+            role="img"
+          ></div>
+          <div class="identity-meta">
+            <div class="identity-name" aria-label="Character name">
+              <span id="player-class-label" class="identity-class">Class 1</span>
+              <span id="profile-first-name" class="identity-first-name">First</span>
+              <span id="profile-last-name" class="identity-last-name">Lastname</span>
+            </div>
+            <div class="identity-rank" aria-label="Current rank">
+              <span id="player-rank-label" class="identity-rank-label"></span>
+            </div>
+            <div class="identity-profile" aria-label="Character profile">
+              <div class="identity-field" aria-label="Player personality display">
+                <span class="identity-field-label">Personality</span>
+                <span
+                  id="player-personality-label"
+                  class="identity-field-value"
+                ></span>
+              </div>
+              <div class="identity-field" aria-label="Character gender display">
+                <span class="identity-field-label">Gender</span>
+                <span id="profile-gender-label" class="identity-field-value"></span>
+              </div>
+              <dl class="identity-stats" aria-label="Player stats">
+                <div class="identity-stat">
+                  <dt class="identity-stat-label">Strength</dt>
+                  <dd id="player-stat-strength" class="identity-stat-value"></dd>
+                </div>
+                <div class="identity-stat">
+                  <dt class="identity-stat-label">Intelligence</dt>
+                  <dd
+                    id="player-stat-intelligence"
+                    class="identity-stat-value"
+                  ></dd>
+                </div>
+                <div class="identity-stat">
+                  <dt class="identity-stat-label">Fear</dt>
+                  <dd id="player-stat-fear" class="identity-stat-value"></dd>
+                </div>
+                <div class="identity-stat">
+                  <dt class="identity-stat-label">Reputation</dt>
+                  <dd id="player-stat-reputation" class="identity-stat-value"></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="panel-center-stack" aria-label="Center panel stack">
+        <section
+          class="panel panel-center-top"
+          aria-label="Center top panel"
+        >
+          <span class="panel-label" aria-hidden="true">2</span>
+        </section>
+        <section
+          class="panel-center-main-stack"
+          aria-label="Center main panel stack"
+        >
+          <section class="panel panel-center" aria-label="Center panel">
+            <span class="panel-label" aria-hidden="true">3</span>
+            <div class="center-workspace">
+              <div class="map-stage">
+                <div class="map-coordinate-frame">
+                  <div class="map-axis map-axis-columns" aria-hidden="true">
+                    <span class="map-axis-label">A</span>
+                    <span class="map-axis-label">B</span>
+                    <span class="map-axis-label">C</span>
+                    <span class="map-axis-label">D</span>
+                    <span class="map-axis-label">E</span>
+                    <span class="map-axis-label">F</span>
+                    <span class="map-axis-label">G</span>
+                    <span class="map-axis-label">H</span>
+                    <span class="map-axis-label">I</span>
+                    <span class="map-axis-label">J</span>
+                  </div>
+                  <div class="map-axis map-axis-rows" aria-hidden="true">
+                    <span class="map-axis-label">1</span>
+                    <span class="map-axis-label">2</span>
+                    <span class="map-axis-label">3</span>
+                    <span class="map-axis-label">4</span>
+                    <span class="map-axis-label">5</span>
+                    <span class="map-axis-label">6</span>
+                    <span class="map-axis-label">7</span>
+                    <span class="map-axis-label">8</span>
+                    <span class="map-axis-label">9</span>
+                    <span class="map-axis-label">10</span>
+                  </div>
+                  <div
+                    id="map-grid"
+                    class="map-grid"
+                    role="grid"
+                    aria-label="World map"
+                  ></div>
+                </div>
+              </div>
+              <aside
+                class="map-info-panel"
+                aria-label="Map information panel"
+              >
+                <p id="map-info-coordinate" class="map-info-coordinate"></p>
+                <h2 id="map-info-location-name" class="map-info-location-name"></h2>
+                <div class="map-info-group">
+                  <span class="map-info-label">Line</span>
+                  <span
+                    id="map-info-line-name"
+                    class="map-info-value map-info-line-value"
+                  ></span>
+                </div>
+                <div
+                  id="map-info-actions"
+                  class="map-info-actions"
+                  aria-label="Location actions"
+                  hidden
+                >
+                  <button
+                    id="map-action-study"
+                    class="map-info-action-button"
+                    type="button"
+                  >
+                    Study
+                  </button>
+                  <button
+                    id="map-action-sleep"
+                    class="map-info-action-button"
+                    type="button"
+                  >
+                    Sleep
+                  </button>
+                  <button
+                    id="map-action-observe"
+                    class="map-info-action-button"
+                    type="button"
+                  >
+                    Observe
+                  </button>
+                </div>
+              </aside>
+            </div>
+          </section>
+          <section
+            class="panel panel-center-bottom"
+            aria-label="Center bottom panel"
+          >
+            <div class="center-bottom-workspace">
+              <section
+                class="center-bottom-panel center-bottom-panel-left"
+                aria-label="Center bottom left panel"
+              >
+                <span class="panel-label" aria-hidden="true">4</span>
+                <div class="panel-4-npc-shell">
+                  <div class="panel-4-controls" aria-label="NPC filters">
+                    <label class="panel-4-control" for="panel-4-sort">
+                      <span class="panel-4-control-label">Sort</span>
+                      <select id="panel-4-sort" class="panel-4-control-input">
+                        <option value="name">Name</option>
+                        <option value="strength">Strength</option>
+                        <option value="intelligence">Intelligence</option>
+                        <option value="fear">Fear</option>
+                        <option value="reputation">Reputation</option>
+                        <option value="gender">Gender</option>
+                      </select>
+                    </label>
+                    <label class="panel-4-control" for="panel-4-filter-gender">
+                      <span class="panel-4-control-label">Gender</span>
+                      <select
+                        id="panel-4-filter-gender"
+                        class="panel-4-control-input"
+                      >
+                        <option value="all">All</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                    </label>
+                    <label
+                      class="panel-4-control"
+                      for="panel-4-filter-affiliation"
+                    >
+                      <span class="panel-4-control-label">Group</span>
+                      <select
+                        id="panel-4-filter-affiliation"
+                        class="panel-4-control-input"
+                      >
+                        <option value="all">All</option>
+                        <option value="nobody">Nobody</option>
+                        <option value="gang">Gang</option>
+                      </select>
+                    </label>
+                    <label class="panel-4-control" for="panel-4-filter-stat">
+                      <span class="panel-4-control-label">Stat</span>
+                      <select
+                        id="panel-4-filter-stat"
+                        class="panel-4-control-input"
+                      >
+                        <option value="all">Any</option>
+                        <option value="strength">Strength</option>
+                        <option value="intelligence">Intelligence</option>
+                        <option value="fear">Fear</option>
+                        <option value="reputation">Reputation</option>
+                      </select>
+                    </label>
+                    <label class="panel-4-control" for="panel-4-filter-stat-min">
+                      <span class="panel-4-control-label">Min</span>
+                      <input
+                        id="panel-4-filter-stat-min"
+                        class="panel-4-control-input"
+                        type="number"
+                        min="0"
+                        max="500"
+                        value="0"
+                      />
+                    </label>
+                  </div>
+                  <div
+                    class="panel-4-list-header panel-4-table-grid"
+                    aria-hidden="true"
+                  >
+                    <span class="panel-4-list-heading">Name</span>
+                    <span class="panel-4-list-heading">Rank</span>
+                    <span class="panel-4-list-heading">Gender</span>
+                    <span class="panel-4-list-heading">Stats</span>
+                  </div>
+                  <div id="panel-4-npc-list" class="panel-4-npc-list"></div>
+                  <p id="panel-4-empty" class="panel-4-empty-state">
+                    No one here.
+                  </p>
+                </div>
+              </section>
+              <section
+                class="center-bottom-panel center-bottom-panel-right"
+                aria-label="Center bottom right panel"
+              >
+                <span class="panel-label" aria-hidden="true">5</span>
+              </section>
+            </div>
+          </section>
+        </section>
+      </section>
+      <section class="panel-right-stack" aria-label="Right panel stack">
+        <section class="panel panel-right" aria-label="Right panel">
+          <span class="panel-label" aria-hidden="true">6</span>
+          <div class="panel-6-log-shell">
+            <p
+              id="panel-6-status"
+              class="panel-6-status"
+              data-locked="false"
+              aria-live="polite"
+            ></p>
+            <div id="panel-6-log" class="panel-6-log" aria-live="polite"></div>
+            <p id="panel-6-empty" class="panel-6-empty-state">
+              Actions and interruptions will land here.
+            </p>
+          </div>
+        </section>
+        <section class="panel panel-right-bottom" aria-label="Right bottom panel">
+          <span class="panel-label" aria-hidden="true">7</span>
+        </section>
+      </section>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>
